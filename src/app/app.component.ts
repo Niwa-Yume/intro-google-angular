@@ -3,6 +3,7 @@
 */
 import { Component } from '@angular/core';
 import { HomeComponent } from "./home/home.component";
+import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -15,12 +16,12 @@ import { HomeComponent } from "./home/home.component";
     </main>
     <!--la partie section contient app-home qui est le composant principal de l'application.-->
     <section class="content">
-      <app-home></app-home>
+      <router-outlet></router-outlet>
     </section>
   `,
   styleUrls: ['./app.component.css'],
   /**imports sert à importer les composants qui seront utilisés dans le composant principal de l'application. */
-  imports: [HomeComponent],
+  imports: [HomeComponent, RouterModule],
 })
 export class AppComponent {
   title = 'homes';
